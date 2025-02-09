@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
 
+import { AppHeader } from "@/features/app-header"
+
 import { cn } from "@/shared/lib/utils"
 
 import "./globals.css"
@@ -27,6 +29,7 @@ export default function RootLayout({
 					jetbrainsMono.variable
 				)}
 			>
+				<AppHeader />
 				{children}
 			</body>
 		</html>
