@@ -12,11 +12,13 @@ export async function Contact({ prefix, hrefPattern }: Props) {
 		profile: "undefined",
 		message: ""
 	}
+	const isUndefined = contact.profile === "undefined"
 	const href = hrefPattern
 		.replace("%profile%", contact.profile)
 		.replace("%message%", contact.message)
+
 	return (
-		<Link href={href} className="tracking-tighter">
+		<Link href={isUndefined ? "#" : href} className="tracking-tighter">
 			{prefix}
 			{contact.profile}
 		</Link>
