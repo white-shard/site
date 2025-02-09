@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
 
-import "./globals.css"
 import { cn } from "@/shared/lib/utils"
+
+import "./globals.css"
 
 const jetbrainsMono = JetBrains_Mono({
 	variable: "--font-jetbrains-mono",
