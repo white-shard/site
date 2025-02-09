@@ -8,7 +8,7 @@ import { ContactLink } from "./contact-link"
 export function TelegramLink() {
 	return (
 		<ContactLink
-			icon={<TelegramIcon />}
+			icon={<TelegramIcon className="text-primary size-6" />}
 			prefix="t.me/"
 			hrefPattern="https://t.me/%profile%?text=%message%"
 		/>
