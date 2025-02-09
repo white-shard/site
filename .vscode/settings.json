@@ -1,8 +1,9 @@
 {
-  "files.exclude": {
-    "**/.vscode": true,
-    "**/next-env.d.ts": true,
-    "**/node_modules": true,
-    "**/yarn.lock": true
-  }
+	"files.exclude": {
+		"**/.next": true,
+		"**/.vscode": true,
+		"**/next-env.d.ts": true,
+		"**/node_modules": true,
+		"**/yarn.lock": true
+	}
 }
