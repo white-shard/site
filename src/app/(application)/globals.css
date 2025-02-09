@@ -3,53 +3,36 @@
 @plugin 'tailwindcss-animate';
 
 @theme {
-	--color-background: #ffffff;
-	--color-foreground: #090a0b;
-
-	--color-card: #ffffff;
-	--color-card-foreground: #090a0b;
-
-	--color-popover: #ffffff;
-	--color-popover-foreground: #090a0b;
-
-	--color-primary: #191919;
-	--color-primary-foreground: #fafafa;
-
-	--color-secondary: #f4f4f5;
-	--color-secondary-foreground: #191919;
-
-	--color-muted: #f4f4f5;
-	--color-muted-foreground: #737373;
-
-	--color-accent: #f4f4f5;
-	--color-accent-foreground: #191919;
-
-	--color-destructive: #ef4444;
-	--color-destructive-foreground: #fafafa;
-
-	--color-border: #e4e4e7;
-	--color-input: #e4e4e7;
-	--color-ring: #090a0b;
-
-	--color-chart-1: #f97316;
-	--color-chart-2: #0d9488;
-	--color-chart-3: #1e293b;
-	--color-chart-4: #eab308;
-	--color-chart-5: #ea580c;
+	--color-background: #13111c;
+	--color-foreground: #ffffff;
+	--color-card: #1a1a1a;
+	--color-card-foreground: #ffffff;
+	--color-popover: #1c1825;
+	--color-popover-foreground: #ffffff;
+	--color-primary: #6b4de6;
+	--color-primary-foreground: #ffffff;
+	--color-secondary: #2a2438;
+	--color-secondary-foreground: #6b4de6;
+	--color-muted: #1a1a1a;
+	--color-muted-foreground: #a1a1aa;
+	--color-accent: #3b82f6;
+	--color-accent-foreground: #ffffff;
+	--color-destructive: #ff4747;
+	--color-destructive-foreground: #ffffff;
+	--color-border: #2a2438;
+	--color-input: #2a2438;
+	--color-ring: #6b4de6;
+	--color-chart-1: #6b4de6;
+	--color-chart-2: #ff9666;
+	--color-chart-3: #9b7aff;
+	--color-chart-4: #ffb599;
+	--color-chart-5: #4b36a6;
 
 	--radius-lg: 0.5rem;
 	--radius-md: calc(0.5rem - 2px);
 	--radius-sm: calc(0.5rem - 4px);
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
 	*,
 	::after,

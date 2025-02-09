@@ -10,8 +10,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-	title: "Next.js + Payload CMS",
-	description: "Example of a Next.js app with Payload CMS and Shadcn/UI"
+	title: "White Shard / Студия Веб Разработки"
 }
 
 export default function RootLayout({
