@@ -37,7 +37,7 @@ export function NavigationMobileMenu({
 						<Menu className="h-5 w-5" />
 					</Button>
 				</SheetTrigger>
-				<SheetContent side="left">
+				<SheetContent className="lg:hidden" side="left">
 					<SheetTitle className="mb-5 border-b pb-5">{logo}</SheetTitle>
 					<div
 						className="flex h-full flex-col justify-between pb-12"
