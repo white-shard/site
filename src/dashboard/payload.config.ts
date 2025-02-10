@@ -8,6 +8,7 @@ import sharp from "sharp"
 import { fileURLToPath } from "url"
 
 import { MediaCollection, UserCollection } from "./collections"
+import { PageCollection } from "./collections/page.collection"
 import { SettingsGlobal } from "./globals"
 import { ruTranslations } from "./translations"
 
@@ -29,7 +30,7 @@ export default buildConfig({
 			ru: ruTranslations
 		}
 	},
-	collections: [UserCollection, MediaCollection],
+	collections: [UserCollection, PageCollection, MediaCollection],
 	globals: [SettingsGlobal],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || "",
