@@ -18,7 +18,7 @@ export default buildConfig({
 	admin: {
 		user: UserCollection.slug,
 		avatar: "default",
-		theme: "all",
+		theme: "dark",
 		suppressHydrationWarning: true,
 		importMap: {
 			baseDir: "@/dashboard"
