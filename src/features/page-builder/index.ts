@@ -1,9 +1,9 @@
-import { BlockText } from "./_blocks/block-text"
+import { TextBlock } from "./_blocks/text-block"
 import { RegisteredBlockData } from "./_types/block.type"
 
 export * from "./_api/page.api"
 
-export const registeredBlocks: RegisteredBlockData[] = [BlockText]
+export const registeredBlocks: RegisteredBlockData[] = [TextBlock]
 export function getBlockRenderer(blockType: string) {
 	return registeredBlocks.find((block) => block.blockType === blockType)
 		?.renderer

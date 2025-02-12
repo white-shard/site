@@ -1,6 +1,6 @@
 import { Block } from "payload"
 
-export const BlockTextDashboard: Block = {
+export const TextBlockDashboard: Block = {
 	slug: "blockText",
 	labels: {
 		singular: "🏷️ Текстовый блок",
