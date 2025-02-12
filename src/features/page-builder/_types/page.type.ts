@@ -9,5 +9,4 @@ export type PageData = {
 export type PageBlock = {
 	id: string
 	blockType: string
-	data: never
 }

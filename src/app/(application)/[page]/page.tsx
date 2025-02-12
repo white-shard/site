@@ -1,6 +1,5 @@
-import { notFound } from "next/navigation"
+import { Suspense } from "react"
 
-import { getPageData } from "@/features/page-builder"
 import { BlockRenderer } from "@/features/page-builder/_ui/block-renderer"
 
 type PageProps = {
@@ -9,12 +8,12 @@ type PageProps = {
 
 export default async function Page({ params }: PageProps) {
 	const { page } = await params
-	const data = await getPageData(page)
-	if (!data) return notFound()
 
 	return (
 		<div className="container mx-auto max-w-screen-xl p-4">
-			<BlockRenderer data={data} />
+			<Suspense fallback={<div>Loading...</div>}>
+				<BlockRenderer pageSlug={page} />
+			</Suspense>
 		</div>
 	)
 }

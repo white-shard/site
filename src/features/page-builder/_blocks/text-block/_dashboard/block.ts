@@ -8,7 +8,7 @@ export const TextBlockDashboard: Block = {
 	},
 	fields: [
 		{
-			name: "data",
+			name: "content",
 			label: "Текст",
 			type: "richText"
 		}

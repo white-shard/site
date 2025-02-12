@@ -1,18 +1,20 @@
-import { getBlockRenderer } from ".."
-
-import { PageData } from "../_types/page.type"
+import { getBlockRenderer, getPageData } from ".."
+import { notFound } from "next/navigation"
 
 type BlockRendererProps = {
-	data: PageData
+	pageSlug: string
 }
 
-export async function BlockRenderer({ data }: BlockRendererProps) {
+export async function BlockRenderer({ pageSlug }: BlockRendererProps) {
+	const data = await getPageData(pageSlug)
+	if (!data) return notFound()
+
 	return (
 		<div>
 			{data.blocks.map((block) => {
 				const renderer = getBlockRenderer(block.blockType)
 				if (renderer) {
-					const blockNode = renderer(block.data)
+					const blockNode = renderer(block as never)
 					return <div key={block.id}>{blockNode}</div>
 				}
 			})}

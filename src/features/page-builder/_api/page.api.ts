@@ -11,9 +11,7 @@ export async function getPageData(slug: string) {
 	const response = await fetch(
 		`${privateConfig.NEXT_PUBLIC_API_URL}/pages?where[slug][equals]=${slug}`,
 		{
-			next: {
-				revalidate: Number(privateConfig.REVALIDATE_RARE)
-			}
+			cache: "no-store"
 		}
 	)
 
