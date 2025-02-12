@@ -4,7 +4,6 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical"
 import { ru } from "@payloadcms/translations/languages/ru"
 import path from "path"
 import { buildConfig } from "payload"
-import sharp from "sharp"
 import { fileURLToPath } from "url"
 
 import { MediaCollection, UserCollection } from "./collections"
@@ -49,6 +48,5 @@ export default buildConfig({
 			connectionString: process.env.DATABASE_URI || ""
 		}
 	}),
-	sharp,
 	plugins: [payloadCloudPlugin()]
 })

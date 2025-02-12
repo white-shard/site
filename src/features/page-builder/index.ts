@@ -1,5 +1,10 @@
-import { Block } from "payload"
+import { BlockText } from "./_blocks/block-text"
+import { RegisteredBlockData } from "./_types/block.type"
 
-import { TextBlock } from "./_blocks/text-block"
+export * from "./_api/page.api"
 
-export const blocks: Block[] = [TextBlock]
+export const registeredBlocks: RegisteredBlockData[] = [BlockText]
+export function getBlockRenderer(blockType: string) {
+	return registeredBlocks.find((block) => block.blockType === blockType)
+		?.renderer
+}

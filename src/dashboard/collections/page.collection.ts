@@ -1,13 +1,16 @@
 import cyrillicToLatin from "cyrillic-to-latin"
 import type { CollectionConfig } from "payload"
 
-import { blocks } from "@/features/page-builder"
+import { registeredBlocks } from "@/features/page-builder"
 
 export const PageCollection: CollectionConfig = {
 	slug: "pages",
 	labels: {
 		singular: "Страницу",
 		plural: "📄 Страницы"
+	},
+	access: {
+		read: () => true
 	},
 	admin: {
 		useAsTitle: "title"
@@ -69,7 +72,7 @@ export const PageCollection: CollectionConfig = {
 			type: "blocks",
 			minRows: 1,
 			maxRows: 20,
-			blocks: blocks
+			blocks: registeredBlocks.map((block) => block.dashboard)
 		}
 	]
 }

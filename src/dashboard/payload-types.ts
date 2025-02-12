@@ -92,7 +92,7 @@ export interface Page {
   keywords: string;
   blocks?:
     | {
-        textBlock: {
+        data?: {
           root: {
             type: string;
             children: {
@@ -106,10 +106,10 @@ export interface Page {
             version: number;
           };
           [k: string]: unknown;
-        };
+        } | null;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'textBlock';
+        blockType: 'blockText';
       }[]
     | null;
   updatedAt: string;
@@ -222,10 +222,10 @@ export interface PagesSelect<T extends boolean = true> {
   blocks?:
     | T
     | {
-        textBlock?:
+        blockText?:
           | T
           | {
-              textBlock?: T;
+              data?: T;
               id?: T;
               blockName?: T;
             };
