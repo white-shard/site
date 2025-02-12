@@ -2,6 +2,9 @@ import { RichText } from "@payloadcms/richtext-lexical/react"
 
 import "../_styles/rich-text.css"
 
-export function TextBlockRenderer(data: never) {
-	return <RichText className="richText" data={data} />
+type Props = {
+	data: never
+}
+export function TextBlockRenderer(props: Props) {
+	return <RichText className="richText" data={props.data} />
 }

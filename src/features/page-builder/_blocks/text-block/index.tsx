@@ -6,5 +6,5 @@ import { TextBlockRenderer } from "./_ui/renderer"
 export const TextBlock: RegisteredBlockData = {
 	blockType: "textBlock",
 	dashboard: TextBlockDashboard,
-	renderer: (data) => TextBlockRenderer(data)
+	renderer: (data) => <TextBlockRenderer data={data} />
 }

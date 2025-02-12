@@ -1,7 +1,7 @@
 import { Block } from "payload"
 
 export const TextBlockDashboard: Block = {
-	slug: "blockText",
+	slug: "textBlock",
 	labels: {
 		singular: "🏷️ Текстовый блок",
 		plural: "🏷️ Текстовые блоки"
