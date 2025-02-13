@@ -22,7 +22,7 @@ export function AppHeaderLayout(props: Props) {
 	}
 
 	return (
-		<header className="supports-backdrop-filter:bg-background/60 sticky top-0 z-50 mx-auto w-full backdrop-blur-sm">
+		<header className="supports-backdrop-filter:bg-background/60 sticky top-0 z-50 mx-auto w-full max-w-screen overflow-hidden backdrop-blur-sm">
 			<div className="container flex h-14 max-w-screen-xl items-center justify-self-center px-4">
 				<NavigationMobileMenu
 					navigation={props.navigationMobile}

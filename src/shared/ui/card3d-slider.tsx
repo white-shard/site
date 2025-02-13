@@ -3,8 +3,14 @@
 import Image from "next/image"
 import React, { Suspense, useEffect, useRef, useState } from "react"
 
+import { Media } from "@/dashboard/payload-types"
+
+import { getMediaURL } from "../lib/utils"
+
+import { Loader } from "./loader"
+
 interface Card3DProps {
-	images?: string[]
+	images?: Media[]
 	zIndex?: number
 	top?: string
 	left?: string
@@ -26,14 +32,15 @@ export function Card3DSlider({
 		height: 0
 	})
 	const cardRef = useRef<HTMLDivElement>(null)
+	const imageURLs = images?.map((it) => getMediaURL(it))
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setCurrentImage((prev) => (prev + 1) % images.length)
+			setCurrentImage((prev) => (prev + 1) % imageURLs.length)
 		}, 10000)
 
 		return () => clearInterval(interval)
-	}, [images])
+	}, [imageURLs])
 
 	useEffect(() => {
 		const handleMouseMove = (e: MouseEvent) => {
@@ -64,7 +71,7 @@ export function Card3DSlider({
 	return (
 		<div
 			ref={cardRef}
-			className="border-secondary absolute overflow-hidden rounded-xl border-[1px] bg-white shadow-xl transition-transform duration-200 ease-out"
+			className="border-secondary bg-background absolute overflow-hidden rounded-xl border-[1px] transition-transform duration-200 ease-out"
 			style={{
 				width,
 				aspectRatio: `${aspectRatio}`,
@@ -74,11 +81,14 @@ export function Card3DSlider({
 				left
 			}}
 		>
-			{images[currentImage] && (
+			<div className="absolute z-[-1] flex size-full items-center justify-center">
+				<Loader className="size-16" />
+			</div>
+			{imageURLs[currentImage] && (
 				<Suspense fallback={null}>
 					<Image
 						{...size}
-						src={images[currentImage]}
+						src={imageURLs[currentImage]}
 						alt={`Slide ${currentImage + 1}`}
 						className="h-full w-full rounded-xl object-cover"
 					/>

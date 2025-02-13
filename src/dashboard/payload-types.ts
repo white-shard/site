@@ -115,6 +115,14 @@ export interface Page {
         | {
             title: string;
             description: string;
+            button: string;
+            slider?:
+              | {
+                  desktopImage: number | Media;
+                  mobileImage: number | Media;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'heroBlock';
@@ -243,6 +251,14 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               title?: T;
               description?: T;
+              button?: T;
+              slider?:
+                | T
+                | {
+                    desktopImage?: T;
+                    mobileImage?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
