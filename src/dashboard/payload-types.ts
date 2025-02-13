@@ -91,26 +91,35 @@ export interface Page {
   description: string;
   keywords: string;
   blocks?:
-    | {
-        data?: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
+    | (
+        | {
+            content?: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
               [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'blockText';
-      }[]
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'textBlock';
+          }
+        | {
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'heroBlock';
+          }
+      )[]
     | null;
   updatedAt: string;
   createdAt: string;
@@ -222,10 +231,18 @@ export interface PagesSelect<T extends boolean = true> {
   blocks?:
     | T
     | {
-        blockText?:
+        textBlock?:
           | T
           | {
-              data?: T;
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        heroBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
               id?: T;
               blockName?: T;
             };

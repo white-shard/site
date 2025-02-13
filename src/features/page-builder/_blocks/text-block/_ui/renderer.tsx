@@ -2,8 +2,6 @@
 
 import { RichText } from "@payloadcms/richtext-lexical/react"
 
-import "../_styles/rich-text.css"
-
 type Props = {
 	data: {
 		content: never

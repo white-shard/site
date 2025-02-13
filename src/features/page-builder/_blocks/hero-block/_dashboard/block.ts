@@ -12,6 +12,13 @@ export const HeroBlockDashboard: Block = {
 			type: "text",
 			required: true,
 			defaultValue: "Мы проектируем ваш онлайн успех!"
+		},
+		{
+			name: "description",
+			type: "textarea",
+			required: true,
+			defaultValue:
+				"Мы создаем современные и эффективные сайты с индивидуальным подходом и без ограничений шаблонами."
 		}
 	]
 }

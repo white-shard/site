@@ -5,6 +5,7 @@ import { AppHeader } from "@/features/app-header"
 
 import { cn } from "@/shared/lib/utils"
 
+import "./custom.css"
 import "./globals.css"
 
 const jetbrainsMono = JetBrains_Mono({
