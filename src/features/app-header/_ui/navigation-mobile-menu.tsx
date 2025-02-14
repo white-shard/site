@@ -17,6 +17,7 @@ type Props = {
 	navigation: React.ReactElement
 	contact?: React.ReactElement
 	actions?: React.ReactElement
+	actionsSidebar?: React.ReactElement
 	open: boolean
 	onOpenChange: (open: boolean) => void
 }
@@ -26,6 +27,7 @@ export function NavigationMobileMenu({
 	navigation,
 	contact,
 	actions,
+	actionsSidebar,
 	open,
 	onOpenChange
 }: Props) {
@@ -48,7 +50,7 @@ export function NavigationMobileMenu({
 						</Suspense>
 						<div className="flex flex-col gap-4 py-8">
 							{contact}
-							{actions}
+							{actionsSidebar || actions}
 						</div>
 					</div>
 				</SheetContent>
