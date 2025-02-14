@@ -133,6 +133,22 @@ export interface Page {
             blockName?: string | null;
             blockType: 'heroBlock';
           }
+        | {
+            title: string;
+            description: string;
+            services?:
+              | {
+                  name: string;
+                  description: string;
+                  cost: string;
+                  link: number | Page;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'servicesBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -269,6 +285,23 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     desktopImage?: T;
                     mobileImage?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        servicesBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              services?:
+                | T
+                | {
+                    name?: T;
+                    description?: T;
+                    cost?: T;
+                    link?: T;
                     id?: T;
                   };
               id?: T;

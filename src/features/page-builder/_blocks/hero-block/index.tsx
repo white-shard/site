@@ -8,5 +8,3 @@ export const HeroBlock: RegisteredBlockData = {
 	dashboard: HeroBlockDashboard,
 	renderer: (data) => <HeroBlockRenderer data={data} />
 }
-
-export { HeroBlockRenderer } from "./_ui/renderer"
