@@ -23,6 +23,24 @@ export const HeroBlockDashboard: Block = {
 				"Мы создаем современные и эффективные сайты с индивидуальным подходом и без ограничений шаблонами."
 		},
 		{
+			name: "features",
+			label: "🔍 Особенности",
+			type: "array",
+			fields: [
+				{
+					name: "name",
+					label: "🔍 Особенность",
+					type: "text",
+					required: true
+				}
+			],
+			admin: {
+				components: {
+					RowLabel: "/custom/row-label#ArrayRowLabel"
+				}
+			}
+		},
+		{
 			name: "button",
 			label: "🔗 Кнопка",
 			type: "text",

@@ -115,6 +115,12 @@ export interface Page {
         | {
             title: string;
             description: string;
+            features?:
+              | {
+                  name: string;
+                  id?: string | null;
+                }[]
+              | null;
             button: string;
             slider?:
               | {
@@ -251,6 +257,12 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               title?: T;
               description?: T;
+              features?:
+                | T
+                | {
+                    name?: T;
+                    id?: T;
+                  };
               button?: T;
               slider?:
                 | T

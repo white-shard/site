@@ -11,7 +11,7 @@ export default async function Page({ params }: PageProps) {
 
 	return (
 		<div className="container mx-auto max-w-screen-xl p-4">
-			<Suspense fallback={<div>Loading...</div>}>
+			<Suspense fallback={<></>}>
 				<BlockRenderer pageSlug={page} />
 			</Suspense>
 		</div>
