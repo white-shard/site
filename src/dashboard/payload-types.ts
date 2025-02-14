@@ -149,6 +149,20 @@ export interface Page {
             blockName?: string | null;
             blockType: 'servicesBlock';
           }
+        | {
+            title: string;
+            description: string;
+            stages?:
+              | {
+                  name: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'stagesOfWorkBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -302,6 +316,21 @@ export interface PagesSelect<T extends boolean = true> {
                     description?: T;
                     cost?: T;
                     link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        stagesOfWorkBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              stages?:
+                | T
+                | {
+                    name?: T;
+                    description?: T;
                     id?: T;
                   };
               id?: T;
