@@ -12,7 +12,7 @@ type Props = {
 }
 export function StagesOfWorkBlockDesktop({ data }: Props) {
 	return (
-		<div className="container mx-auto hidden py-16 md:block">
+		<div className="container mx-auto hidden md:block">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}

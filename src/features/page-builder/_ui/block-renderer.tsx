@@ -10,7 +10,7 @@ export async function BlockRenderer({ pageSlug }: BlockRendererProps) {
 	if (!data) return notFound()
 
 	return (
-		<div className="flex flex-col gap-16 md:gap-4">
+		<div className="flex flex-col gap-16 md:gap-16">
 			{data.blocks.map((block) => {
 				const renderer = getBlockRenderer(block.blockType)
 				if (renderer) {
