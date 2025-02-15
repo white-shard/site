@@ -13,6 +13,7 @@ export interface Config {
   collections: {
     users: User;
     pages: Page;
+    cases: Case;
     media: Media;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -22,6 +23,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
+    cases: CasesSelect<false> | CasesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -191,6 +193,14 @@ export interface Page {
             blockName?: string | null;
             blockType: 'answersToQuestionsBlock';
           }
+        | {
+            title: string;
+            description: string;
+            count: number;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'ourCasesBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -217,6 +227,34 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "cases".
+ */
+export interface Case {
+  id: number;
+  name: string;
+  service?:
+    | (
+        | '🗝️ Сайт под ключ'
+        | '📱 Мобильное приложение'
+        | '🔄 Ребрендинг сайта'
+        | '🎨 Дизайн'
+        | '🛠️ Техническая поддержка'
+        | '🎯 Контекстная реклама'
+      )
+    | null;
+  description: string;
+  href?: string | null;
+  pictures?:
+    | {
+        picture?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -229,6 +267,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'pages';
         value: number | Page;
+      } | null)
+    | ({
+        relationTo: 'cases';
+        value: number | Case;
       } | null)
     | ({
         relationTo: 'media';
@@ -394,6 +436,33 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        ourCasesBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              count?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "cases_select".
+ */
+export interface CasesSelect<T extends boolean = true> {
+  name?: T;
+  service?: T;
+  description?: T;
+  href?: T;
+  pictures?:
+    | T
+    | {
+        picture?: T;
+        id?: T;
       };
   updatedAt?: T;
   createdAt?: T;
