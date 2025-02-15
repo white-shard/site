@@ -1,3 +1,4 @@
+import { AnswersToQuestionsBlock } from "./_blocks/answers-to-questions-block"
 import { HeroBlock } from "./_blocks/hero-block"
 import { ServicesBlock } from "./_blocks/services-block"
 import { StagesOfWorkBlock } from "./_blocks/stages-of-work-block"
@@ -12,7 +13,8 @@ export const registeredBlocks: RegisteredBlockData[] = [
 	HeroBlock,
 	ServicesBlock,
 	StagesOfWorkBlock,
-	WhyChooseUsBlock
+	WhyChooseUsBlock,
+	AnswersToQuestionsBlock
 ]
 export function getBlockRenderer(blockType: string) {
 	return registeredBlocks.find((block) => block.blockType === blockType)

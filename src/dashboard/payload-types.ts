@@ -177,6 +177,20 @@ export interface Page {
             blockName?: string | null;
             blockType: 'whyChooseUsBlock';
           }
+        | {
+            title: string;
+            description: string;
+            questions?:
+              | {
+                  name: string;
+                  answer: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'answersToQuestionsBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -360,6 +374,21 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     name?: T;
                     description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        answersToQuestionsBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              questions?:
+                | T
+                | {
+                    name?: T;
+                    answer?: T;
                     id?: T;
                   };
               id?: T;
