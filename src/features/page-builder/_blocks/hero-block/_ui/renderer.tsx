@@ -1,3 +1,5 @@
+"use client"
+
 import { memo, useMemo } from "react"
 
 import { HeroBlockData } from "../_types/hero-block.type"
