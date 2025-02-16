@@ -201,6 +201,60 @@ export interface Page {
             blockName?: string | null;
             blockType: 'ourCasesBlock';
           }
+        | {
+            title: string;
+            description: string;
+            picture: number | Media;
+            formMeta: {
+              fullname: {
+                label: string;
+                placeholder: string;
+              };
+              phone: {
+                label: string;
+                placeholder: string;
+              };
+              email: {
+                label: string;
+                placeholder: string;
+              };
+              comment: {
+                label: string;
+                placeholder: string;
+              };
+              typeOfActivity: {
+                label: string;
+                placeholder: string;
+              };
+              tasks: {
+                label: string;
+                placeholder: string;
+              };
+              competitors: {
+                label: string;
+                placeholder: string;
+              };
+              exampleSites: {
+                label: string;
+                placeholder: string;
+              };
+              complexElements: {
+                label: string;
+                placeholder: string;
+              };
+              socialNetworks: {
+                label: string;
+                placeholder: string;
+              };
+              logo: {
+                label: string;
+                placeholder: string;
+              };
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'offerRequestBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -442,6 +496,85 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               count?: T;
+              id?: T;
+              blockName?: T;
+            };
+        offerRequestBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              picture?: T;
+              formMeta?:
+                | T
+                | {
+                    fullname?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    phone?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    email?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    comment?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    typeOfActivity?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    tasks?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    competitors?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    exampleSites?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    complexElements?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    socialNetworks?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                    logo?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
+                  };
               id?: T;
               blockName?: T;
             };
