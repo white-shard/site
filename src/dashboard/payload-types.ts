@@ -523,6 +523,12 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Setting {
   id: number;
+  metaData: {
+    title: string;
+    template?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+  };
   navigation?:
     | {
         label: string;
@@ -549,6 +555,14 @@ export interface Setting {
  * via the `definition` "settings_select".
  */
 export interface SettingsSelect<T extends boolean = true> {
+  metaData?:
+    | T
+    | {
+        title?: T;
+        template?: T;
+        description?: T;
+        keywords?: T;
+      };
   navigation?:
     | T
     | {

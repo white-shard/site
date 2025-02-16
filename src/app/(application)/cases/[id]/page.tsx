@@ -3,7 +3,21 @@ import { notFound } from "next/navigation"
 
 import { Media } from "@/dashboard/payload-types"
 
-import { getCaseById } from "@/shared/lib/api"
+import { getCaseById } from "@/shared/api/cases.api"
+
+export async function generateMetadata({
+	params
+}: {
+	params: Promise<{ id: string }>
+}) {
+	const { id } = await params
+	const data = await getCaseById(Number(id))
+
+	return {
+		title: data?.name,
+		description: data?.description
+	}
+}
 
 export default async function CasePage({
 	params

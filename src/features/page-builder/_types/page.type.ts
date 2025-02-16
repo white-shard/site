@@ -2,7 +2,7 @@ export type PageData = {
 	slug: string
 	title: string
 	description: string
-	keywords: string[]
+	keywords: string
 	blocks: PageBlock[]
 }
 
