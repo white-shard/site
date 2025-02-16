@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import { Circle } from "lucide-react"
 
+import { BlockHeader } from "@/shared/ui/block-header"
+
 import { StageOfWorkBlockData } from "../_types/stage-of-work-block.type"
 
 import { StageBlock } from "./stage-block-desktop"
@@ -13,14 +15,9 @@ type Props = {
 export function StagesOfWorkBlockDesktop({ data }: Props) {
 	return (
 		<div className="container mx-auto hidden md:block">
-			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				className="flex flex-col gap-6"
-			>
-				<header className="text-center">
-					<h2 className="mb-4 text-4xl font-bold">{data.title}</h2>
-					<p className="text-secondary mx-auto max-w-2xl">{data.description}</p>
+			<div className="flex flex-col gap-6">
+				<header className="flex flex-col items-center gap-4 text-center">
+					<BlockHeader title={data.title} description={data.description} />
 				</header>
 
 				<div className="relative mx-auto mt-12 max-w-5xl">
@@ -65,7 +62,7 @@ export function StagesOfWorkBlockDesktop({ data }: Props) {
 						))}
 					</div>
 				</div>
-			</motion.div>
+			</div>
 		</div>
 	)
 }

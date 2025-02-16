@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 
+import { BlockHeader } from "@/shared/ui/block-header"
+
 import { StageOfWorkBlockData } from "../_types/stage-of-work-block.type"
 
 import { StageBlockMobile } from "./stage-block-mobile"
@@ -13,14 +15,7 @@ type Props = {
 export function StagesOfWorkMobile({ data }: Props) {
 	return (
 		<div className="grid gap-4 md:hidden">
-			<motion.header
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
-			>
-				<h2 className="mb-4 text-3xl font-bold">{data.title}</h2>
-				<p className="text-secondary max-w-2xl">{data.description}</p>
-			</motion.header>
+			<BlockHeader title={data.title} description={data.description} />
 			<motion.div
 				className="flex flex-col gap-4 py-4"
 				initial={{ opacity: 0 }}

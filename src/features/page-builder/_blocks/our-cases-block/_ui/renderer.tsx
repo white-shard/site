@@ -1,5 +1,7 @@
 import { Suspense } from "react"
 
+import { BlockHeader } from "@/shared/ui/block-header"
+
 import { OurCasesBlock } from "../_types/our-cases-block.types"
 
 import { CaseList } from "./case-list"
@@ -11,8 +13,7 @@ type Props = {
 export function OurCasesBlockRenderer({ data }: Props) {
 	return (
 		<div className="flex flex-col gap-4">
-			<h2 className="text-3xl font-bold">{data.title}</h2>
-			<p className="text-secondary max-w-xl">{data.description}</p>
+			<BlockHeader title={data.title} description={data.description} />
 			<Suspense fallback={<CasesSkeleton count={data.count} />}>
 				<CaseList limit={data.count} />
 			</Suspense>

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 
+import { BlockHeader } from "@/shared/ui/block-header"
+
 import { cn } from "@/shared/lib/utils"
 
 import { WhyChooseUsBlockData } from "../_types/why-choose-us-block.type"
@@ -15,8 +17,7 @@ type Props = {
 export const WhyChooseUsBlockRenderer = ({ data }: Props) => {
 	return (
 		<div className="flex flex-col gap-4">
-			<h2 className="text-3xl font-bold">{data.title}</h2>
-			<p className="text-secondary max-w-xl">{data.description}</p>
+			<BlockHeader title={data.title} description={data.description} />
 			<motion.div
 				className="grid grid-cols-1 gap-4 md:grid-cols-7"
 				variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}

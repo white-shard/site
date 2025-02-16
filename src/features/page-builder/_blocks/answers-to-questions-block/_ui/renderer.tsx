@@ -8,6 +8,7 @@ import {
 	AccordionItem,
 	AccordionTrigger
 } from "@/shared/ui/accordion"
+import { BlockHeader } from "@/shared/ui/block-header"
 
 import { AnswersToQuestionsBlockData } from "../_types/answers-to-questions-block.type"
 
@@ -17,28 +18,8 @@ type Props = {
 
 export function AnswersToQuestionsBlockRenderer({ data }: Props) {
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, ease: "easeOut" }}
-			className="flex flex-col gap-4"
-		>
-			<motion.h2
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.4 }}
-				className="text-3xl font-bold"
-			>
-				{data.title}
-			</motion.h2>
-			<motion.p
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.4 }}
-				className="text-secondary max-w-xl"
-			>
-				{data.description}
-			</motion.p>
+		<div className="flex flex-col gap-4">
+			<BlockHeader title={data.title} description={data.description} />
 			<Accordion type="single" collapsible>
 				{data.questions.map((question, index) => (
 					<motion.div
@@ -78,6 +59,6 @@ export function AnswersToQuestionsBlockRenderer({ data }: Props) {
 					</motion.div>
 				))}
 			</Accordion>
-		</motion.div>
+		</div>
 	)
 }
