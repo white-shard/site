@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     pages: Page;
     cases: Case;
+    request: Request;
     media: Media;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -24,6 +25,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     cases: CasesSelect<false> | CasesSelect<true>;
+    request: RequestSelect<false> | RequestSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -309,6 +311,27 @@ export interface Case {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "request".
+ */
+export interface Request {
+  id: number;
+  fullname: string;
+  email: string;
+  phone: string;
+  comment?: string | null;
+  typeOfActivity?: string | null;
+  tasks?: string | null;
+  competitors?: string | null;
+  exampleSites?: string | null;
+  complexElements?: string | null;
+  socialNetworks?: string | null;
+  logo?: boolean | null;
+  status: '🆕 Новая' | '⚒️ В работе' | '✅ Выполнена' | '❌ Отменена';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -325,6 +348,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'cases';
         value: number | Case;
+      } | null)
+    | ({
+        relationTo: 'request';
+        value: number | Request;
       } | null)
     | ({
         relationTo: 'media';
@@ -597,6 +624,26 @@ export interface CasesSelect<T extends boolean = true> {
         picture?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "request_select".
+ */
+export interface RequestSelect<T extends boolean = true> {
+  fullname?: T;
+  email?: T;
+  phone?: T;
+  comment?: T;
+  typeOfActivity?: T;
+  tasks?: T;
+  competitors?: T;
+  exampleSites?: T;
+  complexElements?: T;
+  socialNetworks?: T;
+  logo?: T;
+  status?: T;
   updatedAt?: T;
   createdAt?: T;
 }

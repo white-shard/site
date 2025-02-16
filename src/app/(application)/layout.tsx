@@ -2,6 +2,8 @@ import { JetBrains_Mono } from "next/font/google"
 
 import { AppHeader } from "@/features/app-header"
 
+import { Toaster } from "@/shared/ui/sonner"
+
 import { cn } from "@/shared/lib/utils"
 
 import { getAppMetaData } from "@/shared/api/meta-data.api"
@@ -42,6 +44,8 @@ export default function RootLayout({
 			>
 				<AppHeader />
 				{children}
+
+				<Toaster />
 			</body>
 		</html>
 	)

@@ -8,3 +8,5 @@ export const OurCasesBlock: RegisteredBlockData = {
 	dashboard: OurCasesBlockDashboard,
 	renderer: (data) => <OurCasesBlockRenderer data={data} />
 }
+
+export * from "./_ui/case-page-renderer"

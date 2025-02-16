@@ -5,11 +5,13 @@ import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
+import { toast } from "sonner"
 
 import { BlockHeader } from "@/shared/ui/block-header"
 import { Button } from "@/shared/ui/button"
 import { Form, FormField } from "@/shared/ui/form"
 
+import { submitFeedbackForm } from "../_actions/submit-form-action"
 import {
 	RequestFormSchema,
 	requestFormSchema
@@ -33,7 +35,18 @@ export function OfferRequestBlockRenderer({ data }: Props) {
 	})
 
 	const onSubmit: SubmitHandler<RequestFormSchema> = (data) => {
-		alert(JSON.stringify(data))
+		submitFeedbackForm(data)
+			.then(() => {
+				form.reset()
+				toast("✅ Заявка отправлена", {
+					description: "В ближайшее время мы с вами свяжемся"
+				})
+			})
+			.catch(() => {
+				toast("❌ Произошла ошибка", {
+					description: "Заявка не была отправлена, попробуйте повторить позднее"
+				})
+			})
 	}
 
 	const [showOfferFields, setShowOfferFields] = useState(false)

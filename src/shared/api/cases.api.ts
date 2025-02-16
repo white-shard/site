@@ -8,9 +8,7 @@ export async function getCaseById(id: number) {
 	const response = await fetch(
 		`${privateConfig.NEXT_PUBLIC_API_URL}/cases/${id}`,
 		{
-			next: {
-				revalidate: Number(privateConfig.REVALIDATE_RARE)
-			}
+			cache: "no-store"
 		}
 	)
 

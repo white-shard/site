@@ -6,7 +6,12 @@ import path from "path"
 import { buildConfig } from "payload"
 import { fileURLToPath } from "url"
 
-import { CasesCollection, MediaCollection, UserCollection } from "./collections"
+import {
+	CasesCollection,
+	MediaCollection,
+	RequestCollection,
+	UserCollection
+} from "./collections"
 import { PageCollection } from "./collections/page.collection"
 import { SettingsGlobal } from "./globals"
 import { ruTranslations } from "./translations"
@@ -33,6 +38,7 @@ export default buildConfig({
 		UserCollection,
 		PageCollection,
 		CasesCollection,
+		RequestCollection,
 		MediaCollection
 	],
 	globals: [SettingsGlobal],
