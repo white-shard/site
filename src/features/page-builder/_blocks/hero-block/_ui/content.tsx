@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { memo } from "react"
 
 import { Button } from "@/shared/ui/button"
@@ -23,7 +24,9 @@ export const Content = memo(
 				<p className="text-secondary md:text-lg">{description}</p>
 				<Features features={features} />
 			</div>
-			<Button className="w-full px-12 py-5 md:w-fit">{buttonText}</Button>
+			<Button asChild className="w-full px-12 py-5 md:w-fit">
+				<Link href="#offer">{buttonText}</Link>
+			</Button>
 		</div>
 	)
 )
