@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 
 import { Media } from "@/dashboard/payload-types"
 
-import { getCaseById } from "@/shared/api/cases.api"
+import { getCaseById } from "@/shared/api/case.api"
 
 type Props = {
 	caseId: string

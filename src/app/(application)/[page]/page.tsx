@@ -1,8 +1,9 @@
 import { Metadata } from "next"
 import { Suspense } from "react"
 
-import { getPageData } from "@/features/page-builder"
 import { BlockRenderer } from "@/features/page-builder/_ui/block-renderer"
+
+import { getPageData } from "@/shared/api/page.api"
 
 type PageProps = {
 	params: Promise<{ page: string }>

@@ -1,4 +1,4 @@
-import { getCases } from "../_api/cases.api"
+import { getCases } from "@/shared/api/case.api"
 
 import { CaseCard } from "./case-card"
 

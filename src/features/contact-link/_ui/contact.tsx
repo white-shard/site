@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { getContactData } from "../_api/contact.api"
+import { getContactData } from "@/shared/api/settings.api"
 
 type Props = {
 	prefix?: string

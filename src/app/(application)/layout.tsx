@@ -6,7 +6,7 @@ import { Toaster } from "@/shared/ui/sonner"
 
 import { cn } from "@/shared/lib/utils"
 
-import { getAppMetaData } from "@/shared/api/meta-data.api"
+import { getAppMetaData } from "@/shared/api/settings.api"
 
 import "./custom.css"
 import "./globals.css"

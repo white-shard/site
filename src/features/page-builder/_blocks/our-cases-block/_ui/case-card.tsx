@@ -4,18 +4,20 @@ import { ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-import { CaseData } from "../_types/our-cases-block.types"
+import { Case, Media } from "@/dashboard/payload-types"
 
 type Props = {
-	data: CaseData
+	data: Case
 }
 export function CaseCard({ data }: Props) {
 	return (
-		<Link href={`/cases/${data.id}`} prefetch={false}>
+		<Link href={`/cases/${data.id}`}>
 			<div className="group relative">
 				<div className="relative overflow-hidden rounded-xl shadow-lg">
 					<Image
-						src={data.pictures[0].picture.url || "/placeholder.svg"}
+						src={
+							(data.pictures?.[0]?.picture as Media)?.url || "/placeholder.svg"
+						}
 						alt={data.name}
 						width={600}
 						height={400}
