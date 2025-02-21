@@ -1,4 +1,4 @@
-import { getNavigationData } from "../_api/navigation.api"
+import { getNavigationData } from "@/shared/api/settings.api"
 
 import { NavigationDropdownItem } from "./navigation-dropdown-item"
 import { NavigationFlatItem } from "./navigation-flat-item"
@@ -12,7 +12,7 @@ export async function NavigationMenu({ useDropdown = true }: Props) {
 
 	return (
 		<nav className="flex h-full flex-col gap-6 text-lg font-medium lg:h-auto lg:flex-row lg:text-base">
-			{data.map((item) =>
+			{data?.map((item) =>
 				item.children?.length ? (
 					<div className="flex flex-col gap-6" key={item.href}>
 						{useDropdown ? (

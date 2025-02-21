@@ -1,6 +1,6 @@
 export type NavigationLink = {
-	id?: string
+	id?: string | null
 	label: string
 	href: string
-	children?: NavigationLink[]
+	children?: NavigationLink[] | null
 }
