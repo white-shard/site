@@ -1,7 +1,6 @@
 "use cache"
 
 import { cacheLife } from "next/dist/server/use-cache/cache-life"
-import Link from "next/link"
 
 import { TelegramLink } from "@/features/contact-link"
 
