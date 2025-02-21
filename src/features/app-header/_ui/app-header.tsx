@@ -1,6 +1,7 @@
 "use cache"
 
 import { cacheLife } from "next/dist/server/use-cache/cache-life"
+import Link from "next/link"
 
 import { TelegramLink } from "@/features/contact-link"
 
@@ -13,7 +14,11 @@ import { NavigationMenu } from "./navigation-menu"
 export async function AppHeader() {
 	const APP_LOGO = <AppLogo />
 	const CONTACT = <TelegramLink />
-	const ACTIONS = <Button>Оставить заявку</Button>
+	const ACTIONS = (
+		<Button asChild>
+			<Link href="#offer">Оставить заявку</Link>
+		</Button>
+	)
 	cacheLife("minutes")
 
 	return (

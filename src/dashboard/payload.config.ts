@@ -4,10 +4,15 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical"
 import { ru } from "@payloadcms/translations/languages/ru"
 import path from "path"
 import { buildConfig } from "payload"
-import sharp from "sharp"
 import { fileURLToPath } from "url"
 
-import { MediaCollection, UserCollection } from "./collections"
+import {
+	CasesCollection,
+	MediaCollection,
+	RequestCollection,
+	UserCollection
+} from "./collections"
+import { PageCollection } from "./collections/page.collection"
 import { SettingsGlobal } from "./globals"
 import { ruTranslations } from "./translations"
 
@@ -17,7 +22,7 @@ export default buildConfig({
 	admin: {
 		user: UserCollection.slug,
 		avatar: "default",
-		theme: "all",
+		theme: "dark",
 		suppressHydrationWarning: true,
 		importMap: {
 			baseDir: "@/dashboard"
@@ -29,7 +34,13 @@ export default buildConfig({
 			ru: ruTranslations
 		}
 	},
-	collections: [UserCollection, MediaCollection],
+	collections: [
+		UserCollection,
+		PageCollection,
+		CasesCollection,
+		RequestCollection,
+		MediaCollection
+	],
 	globals: [SettingsGlobal],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || "",
@@ -48,6 +59,5 @@ export default buildConfig({
 			connectionString: process.env.DATABASE_URI || ""
 		}
 	}),
-	sharp,
 	plugins: [payloadCloudPlugin()]
 })
