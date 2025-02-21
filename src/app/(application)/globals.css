@@ -11,7 +11,7 @@
 	--color-popover-foreground: #ffffff;
 	--color-primary: #6b4de6;
 	--color-primary-foreground: #ffffff;
-	--color-secondary: #635c74;
+	--color-secondary: #2a2438;
 	--color-secondary-foreground: #6b4de6;
 	--color-muted: #1a1a1a;
 	--color-muted-foreground: #a1a1aa;
@@ -31,27 +31,6 @@
 	--radius-lg: 0.5rem;
 	--radius-md: calc(0.5rem - 2px);
 	--radius-sm: calc(0.5rem - 4px);
-
-	--animate-accordion-down: accordion-down 0.3s ease-out;
-	--animate-accordion-up: accordion-up 0.3s ease-out;
-
-	@keyframes accordion-down {
-		from {
-			height: 0;
-		}
-		to {
-			height: var(--radix-accordion-content-height);
-		}
-	}
-
-	@keyframes accordion-up {
-		from {
-			height: var(--radix-accordion-content-height);
-		}
-		to {
-			height: 0;
-		}
-	}
 }
 
 @layer base {
@@ -65,9 +44,6 @@
 }
 
 @layer utilities {
-	html {
-		scroll-behavior: smooth;
-	}
 	body {
 		font-family: "JetBrains Mono", monospace;
 	}
