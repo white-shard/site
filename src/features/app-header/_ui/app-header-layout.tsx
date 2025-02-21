@@ -11,6 +11,7 @@ type Props = {
 	navigationMobile: React.ReactElement
 	contact: React.ReactElement
 	actions: React.ReactElement
+	actionsSidebar?: React.ReactElement
 }
 
 export function AppHeaderLayout(props: Props) {
@@ -18,7 +19,8 @@ export function AppHeaderLayout(props: Props) {
 	const data = {
 		logo: props.logo,
 		contact: props.contact,
-		actions: props.actions
+		actions: props.actions,
+		actionsSidebar: props.actionsSidebar
 	}
 
 	return (
