@@ -1,15 +1,16 @@
-"use server"
-
 import { getAppCMS } from "../lib/payload"
 
 export async function getCaseById(id: number) {
 	const payload = await getAppCMS()
-	const data = await payload.findByID({
-		collection: "cases",
-		id
-	})
-
-	return data
+	try {
+		const data = await payload.findByID({
+			collection: "cases",
+			id
+		})
+		return data
+	} catch {
+		return null
+	}
 }
 
 export async function getCases(limit: number = 32) {

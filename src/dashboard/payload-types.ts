@@ -288,16 +288,7 @@ export interface Media {
 export interface Case {
   id: number;
   name: string;
-  service?:
-    | (
-        | '🗝️ Сайт под ключ'
-        | '📱 Мобильное приложение'
-        | '🔄 Ребрендинг сайта'
-        | '🎨 Дизайн'
-        | '🛠️ Техническая поддержка'
-        | '🎯 Контекстная реклама'
-      )
-    | null;
+  service?: ('site' | 'mobile' | 'rebrand' | 'design' | 'support' | 'ads') | null;
   description: string;
   href?: string | null;
   pictures?:

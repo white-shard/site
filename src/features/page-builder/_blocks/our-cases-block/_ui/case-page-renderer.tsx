@@ -1,18 +1,12 @@
 import Image from "next/image"
-import { notFound } from "next/navigation"
 
-import { Media } from "@/dashboard/payload-types"
-
-import { getCaseById } from "@/shared/api/case.api"
+import { Case, Media } from "@/dashboard/payload-types"
 
 type Props = {
-	caseId: string
+	data: Case
 }
 
-export async function CasePageRenderer({ caseId }: Props) {
-	const data = await getCaseById(Number(caseId))
-	if (!data) return notFound()
-
+export function CasePageRenderer({ data }: Props) {
 	return (
 		<>
 			<h2 className="from-primary to-secondary bg-gradient-to-r bg-clip-text text-4xl font-bold text-transparent">
