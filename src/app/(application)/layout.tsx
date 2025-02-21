@@ -1,32 +1,16 @@
+import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
 
-import { AppHeader } from "@/features/app-header"
-
-import { Toaster } from "@/shared/ui/sonner"
-
-import { cn } from "@/shared/lib/utils"
-
-import { getAppMetaData } from "@/shared/api/settings.api"
-
-import "./custom.css"
 import "./globals.css"
+import { cn } from "@/shared/lib/utils"
 
 const jetbrainsMono = JetBrains_Mono({
 	variable: "--font-jetbrains-mono",
 	subsets: ["latin"]
 })
 
-export async function generateMetadata() {
-	const metaData = await getAppMetaData()
-
-	return {
-		title: {
-			default: metaData?.title,
-			template: metaData?.template
-		},
-		description: metaData?.description,
-		keywords: metaData?.keywords?.split(",").map((keyword) => keyword.trim())
-	}
+export const metadata: Metadata = {
+	title: "White Shard / Студия Веб Разработки"
 }
 
 export default function RootLayout({
@@ -42,10 +26,7 @@ export default function RootLayout({
 					jetbrainsMono.variable
 				)}
 			>
-				<AppHeader />
 				{children}
-
-				<Toaster />
 			</body>
 		</html>
 	)
