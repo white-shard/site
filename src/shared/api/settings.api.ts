@@ -41,10 +41,7 @@ export async function getNavigationData() {
 export async function getFooterData() {
 	const payload = await getAppCMS()
 	const data = await payload.findGlobal({
-		slug: "settings",
-		select: {
-			footer: true
-		}
+		slug: "settings"
 	})
 
 	return data.footer

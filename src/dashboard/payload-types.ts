@@ -295,7 +295,7 @@ export interface Media {
 export interface Case {
   id: number;
   name: string;
-  service?: ('site' | 'mobile' | 'rebrand' | 'design' | 'support' | 'ads') | null;
+  service: string;
   description: string;
   href?: string | null;
   pictures?:
@@ -734,6 +734,8 @@ export interface Setting {
   footer: {
     description: string;
     button: string;
+    contactsDescription: string;
+    copyright: string;
   };
   contact: {
     profile: string;
@@ -774,6 +776,8 @@ export interface SettingsSelect<T extends boolean = true> {
     | {
         description?: T;
         button?: T;
+        contactsDescription?: T;
+        copyright?: T;
       };
   contact?:
     | T
