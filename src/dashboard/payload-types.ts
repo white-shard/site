@@ -94,6 +94,13 @@ export interface Page {
   title: string;
   description: string;
   keywords: string;
+  childController?:
+    | {
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'ourCasesController';
+      }[]
+    | null;
   blocks?:
     | (
         | {
@@ -414,6 +421,16 @@ export interface PagesSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   keywords?: T;
+  childController?:
+    | T
+    | {
+        ourCasesController?:
+          | T
+          | {
+              id?: T;
+              blockName?: T;
+            };
+      };
   blocks?:
     | T
     | {
