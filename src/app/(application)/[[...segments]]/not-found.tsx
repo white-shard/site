@@ -8,7 +8,7 @@ export const metadata = {
 		"Извините, страница, которую вы ищете, не существует или была перемещена."
 }
 
-export default async function NotFoundPage() {
+export default function NotFound() {
 	return (
 		<div className="flex flex-col items-center justify-center px-4 py-32 text-center">
 			<h1 className="mb-4 text-4xl font-bold">404 - Страница не найдена</h1>
