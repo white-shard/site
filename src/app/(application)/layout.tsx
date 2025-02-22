@@ -26,7 +26,25 @@ export async function generateMetadata() {
 			template: metaData?.template
 		},
 		description: metaData?.description,
-		keywords: metaData?.keywords?.split(",").map((keyword) => keyword.trim())
+		keywords: metaData?.keywords?.split(",").map((keyword) => keyword.trim()),
+		icons: {
+			icon: [
+				{
+					type: "image/svg+xml",
+					url: "/favicon.svg"
+				},
+				{
+					type: "image/x-icon",
+					rel: "shortcut icon",
+					url: "/favicon.ico"
+				},
+				{
+					type: "image/png",
+					sizes: "128x128",
+					url: "/favicon.png"
+				}
+			]
+		}
 	}
 }
 
