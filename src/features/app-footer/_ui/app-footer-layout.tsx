@@ -12,12 +12,12 @@ type Props = {
 
 export function AppFooterLayout({ logo, contact, navigation }: Props) {
 	return (
-		<footer className="mx-auto max-w-7xl px-4 pt-16 pb-8">
-			<div className="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-x-8">
+		<footer className="mx-auto max-w-7xl border-t px-4 pt-16 pb-8">
+			<div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-8">
 				{/* О компании */}
-				<div className="flex flex-col gap-4">
+				<div className="flex flex-col gap-4 md:col-span-1 lg:col-span-3">
 					<div className="text-2xl font-bold">{logo}</div>
-					<p className="text-secondary leading-relaxed">
+					<p className="text-secondary max-w-screen-sm leading-relaxed">
 						Мы создаем инновационные решения для вашего бизнеса, помогая
 						компаниям развиваться в цифровую эпоху
 					</p>
