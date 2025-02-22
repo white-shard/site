@@ -98,6 +98,28 @@ export const SettingsGlobal: GlobalConfig = {
 			}
 		},
 		{
+			name: "footer",
+			type: "group",
+			label: "📃 Футер",
+			fields: [
+				{
+					name: "description",
+					label: "💬 Описание",
+					type: "textarea",
+					required: true,
+					defaultValue:
+						"Мы создаем инновационные решения для вашего бизнеса, помогая компаниям развиваться в цифровую эпоху"
+				},
+				{
+					name: "button",
+					label: "🔗 Кнопка",
+					type: "text",
+					required: true,
+					defaultValue: "Бесплатная консультация"
+				}
+			]
+		},
+		{
 			name: "contact",
 			type: "group",
 			label: "📃 Контакты",

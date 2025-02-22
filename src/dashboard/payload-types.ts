@@ -714,6 +714,10 @@ export interface Setting {
         id?: string | null;
       }[]
     | null;
+  footer: {
+    description: string;
+    button: string;
+  };
   contact: {
     profile: string;
     message: string;
@@ -747,6 +751,12 @@ export interface SettingsSelect<T extends boolean = true> {
               id?: T;
             };
         id?: T;
+      };
+  footer?:
+    | T
+    | {
+        description?: T;
+        button?: T;
       };
   contact?:
     | T

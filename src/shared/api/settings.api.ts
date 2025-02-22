@@ -37,3 +37,15 @@ export async function getNavigationData() {
 
 	return data.navigation
 }
+
+export async function getFooterData() {
+	const payload = await getAppCMS()
+	const data = await payload.findGlobal({
+		slug: "settings",
+		select: {
+			footer: true
+		}
+	})
+
+	return data.footer
+}
