@@ -1,6 +1,6 @@
 import { GlobalConfig } from "payload"
 
-import { NavigationLink } from "@/features/app-header/_types/navigation.type"
+import { NavigationLink } from "@/features/app-footer/_types/navigation.type"
 
 export const SettingsGlobal: GlobalConfig = {
 	slug: "settings",
@@ -96,6 +96,42 @@ export const SettingsGlobal: GlobalConfig = {
 					RowLabel: "/custom/row-label#ArrayRowLabel"
 				}
 			}
+		},
+		{
+			name: "footer",
+			type: "group",
+			label: "📃 Футер",
+			fields: [
+				{
+					name: "description",
+					label: "💬 Описание",
+					type: "textarea",
+					required: true,
+					defaultValue:
+						"Мы создаем инновационные решения для вашего бизнеса, помогая компаниям развиваться в цифровую эпоху"
+				},
+				{
+					name: "button",
+					label: "🔗 Кнопка",
+					type: "text",
+					required: true,
+					defaultValue: "Бесплатная консультация"
+				},
+				{
+					name: "contactsDescription",
+					label: "📃 Описание контактов",
+					type: "textarea",
+					required: true,
+					defaultValue: "Возникли вопросы? Свяжитесь с нами!"
+				},
+				{
+					name: "copyright",
+					label: "📃 Копирайт",
+					type: "text",
+					required: true,
+					defaultValue: "© 2025 White Shard. Все права защищены."
+				}
+			]
 		},
 		{
 			name: "contact",

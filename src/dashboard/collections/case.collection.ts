@@ -25,34 +25,9 @@ export const CasesCollection: CollectionConfig = {
 		{
 			name: "service",
 			label: "✅ Услуга",
-			type: "select",
+			type: "text",
+			required: true,
 			defaultValue: "site",
-			options: [
-				{
-					label: "🗝️ Сайт под ключ",
-					value: "site"
-				},
-				{
-					label: "📱 Мобильное приложение",
-					value: "mobile"
-				},
-				{
-					label: "🔄 Ребрендинг сайта",
-					value: "rebrand"
-				},
-				{
-					label: "🎨 Дизайн",
-					value: "design"
-				},
-				{
-					label: "🛠️ Техническая поддержка",
-					value: "support"
-				},
-				{
-					label: "🎯 Контекстная реклама",
-					value: "ads"
-				}
-			],
 			admin: {
 				position: "sidebar"
 			}
