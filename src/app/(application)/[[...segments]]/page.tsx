@@ -1,19 +1,16 @@
-import { Suspense } from "react"
-
 import { BlockRenderer } from "@/features/page-builder/_ui/block-renderer"
 
 type PageProps = {
-	params: Promise<{ page: string }>
+	params: Promise<{ segments?: string[] }>
 }
 
 export default async function Page({ params }: PageProps) {
-	const { page } = await params
+	const { segments } = await params
+	const slug = !segments || !segments.length ? ["home"] : segments
 
 	return (
 		<div className="container mx-auto max-w-screen-xl p-4">
-			<Suspense fallback={<></>}>
-				<BlockRenderer pageSlug={page} />
-			</Suspense>
+			<BlockRenderer segments={slug} />
 		</div>
 	)
 }

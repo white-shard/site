@@ -1,7 +1,10 @@
 import cyrillicToLatin from "cyrillic-to-latin"
 import type { CollectionConfig } from "payload"
 
-import { registeredBlocks } from "@/features/page-builder"
+import {
+	registeredBlocks,
+	registeredControllers
+} from "@/features/page-builder"
 
 export const PageCollection: CollectionConfig = {
 	slug: "pages",
@@ -62,6 +65,21 @@ export const PageCollection: CollectionConfig = {
 			label: "🔍 Ключевые слова",
 			type: "text",
 			required: true,
+			admin: {
+				position: "sidebar"
+			}
+		},
+		{
+			name: "childController",
+			label: "👶 Управление дочерними страницами",
+			labels: {
+				singular: "Обработчик",
+				plural: "Обработчики"
+			},
+			type: "blocks",
+			required: false,
+			maxRows: 1,
+			blocks: registeredControllers.map((controller) => controller.dashboard),
 			admin: {
 				position: "sidebar"
 			}
