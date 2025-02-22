@@ -11,8 +11,6 @@ import {
 	RegisteredChildPageController
 } from "./_types/block.type"
 
-export * from "../../shared/api/page.api"
-
 export const registeredBlocks: RegisteredBlockData[] = [
 	TextBlock,
 	HeroBlock,

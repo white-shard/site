@@ -1,7 +1,9 @@
 import { Metadata } from "next"
 import { Suspense } from "react"
 
-import { getControllerMetadata, getPageData } from "@/features/page-builder"
+import { getControllerMetadata } from "@/features/page-builder"
+
+import { getPageData } from "@/shared/api/page.api"
 
 type PageProps = {
 	params: Promise<{ segments?: string[] }>
