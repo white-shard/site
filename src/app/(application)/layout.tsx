@@ -1,5 +1,6 @@
 import { JetBrains_Mono } from "next/font/google"
 
+import { AppFooter } from "@/features/app-footer"
 import { AppHeader } from "@/features/app-header"
 
 import { Toaster } from "@/shared/ui/sonner"
@@ -44,7 +45,7 @@ export default function RootLayout({
 			>
 				<AppHeader />
 				{children}
-
+				<AppFooter />
 				<Toaster />
 			</body>
 		</html>
