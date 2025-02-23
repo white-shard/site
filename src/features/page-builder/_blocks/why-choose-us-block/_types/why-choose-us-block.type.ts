@@ -1,6 +1,6 @@
 export type WhyChooseUsBlockData = {
 	title: string
-	description: string
+	description?: string
 	items: ReasonData[]
 }
 

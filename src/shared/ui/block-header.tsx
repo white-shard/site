@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 type Props = {
 	title: string
-	description: string
+	description?: string
 }
 
 export function BlockHeader({ title, description }: Props) {
@@ -18,14 +18,16 @@ export function BlockHeader({ title, description }: Props) {
 			>
 				{title}
 			</motion.h2>
-			<motion.p
-				className="text-secondary max-w-xl"
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, delay: 0.2 }}
-			>
-				{description}
-			</motion.p>
+			{description && (
+				<motion.p
+					className="text-secondary max-w-xl"
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.2 }}
+				>
+					{description}
+				</motion.p>
+			)}
 		</>
 	)
 }

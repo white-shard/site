@@ -146,7 +146,7 @@ export interface Page {
           }
         | {
             title: string;
-            description: string;
+            description?: string | null;
             services?:
               | {
                   name: string;
@@ -162,7 +162,7 @@ export interface Page {
           }
         | {
             title: string;
-            description: string;
+            description?: string | null;
             stages?:
               | {
                   name: string;
@@ -176,7 +176,7 @@ export interface Page {
           }
         | {
             title: string;
-            description: string;
+            description?: string | null;
             items?:
               | {
                   name: string;
@@ -190,7 +190,7 @@ export interface Page {
           }
         | {
             title: string;
-            description: string;
+            description?: string | null;
             questions?:
               | {
                   name: string;
@@ -204,7 +204,7 @@ export interface Page {
           }
         | {
             title: string;
-            description: string;
+            description?: string | null;
             count: number;
             id?: string | null;
             blockName?: string | null;
@@ -212,7 +212,7 @@ export interface Page {
           }
         | {
             title: string;
-            description: string;
+            description?: string | null;
             picture: number | Media;
             formMeta: {
               fullname: {
