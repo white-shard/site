@@ -6,7 +6,7 @@ import { RequestFormSchema } from "../_schema/offer-request-form.schema"
 
 export type OfferRequestBlock = {
 	title: string
-	description: string
+	description?: string
 	picture: Media
 	formMeta: OfferRequestBlockFormMeta
 }

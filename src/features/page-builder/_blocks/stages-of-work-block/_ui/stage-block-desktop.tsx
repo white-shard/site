@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 type Props = {
 	name: string
-	description: string
+	description?: string
 }
 
 export function StageBlock({ name, description }: Props) {
@@ -14,7 +14,7 @@ export function StageBlock({ name, description }: Props) {
 			transition={{ type: "spring", stiffness: 400, damping: 10 }}
 		>
 			<h3 className="mb-2 text-xl font-bold">{name}</h3>
-			<p className="text-muted-foreground">{description}</p>
+			{description && <p className="text-muted-foreground">{description}</p>}
 		</motion.div>
 	)
 }

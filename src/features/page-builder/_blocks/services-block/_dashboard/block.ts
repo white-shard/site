@@ -18,7 +18,7 @@ export const ServicesBlockDashboard: Block = {
 			name: "description",
 			label: "💬 Описание",
 			type: "textarea",
-			required: true,
+			required: false,
 			defaultValue:
 				"Мы предлагаем широкий спектр услуг по разработке и продвижению сайтов. Наша команда профессионалов поможет воплотить в жизнь ваши идеи."
 		},
@@ -43,13 +43,13 @@ export const ServicesBlockDashboard: Block = {
 					name: "cost",
 					label: "💰 Стоимость",
 					type: "text",
-					required: true
+					required: false
 				},
 				{
 					name: "link",
 					label: "🔗 Ссылка",
 					type: "relationship",
-					required: true,
+					required: false,
 					relationTo: "pages"
 				}
 			],

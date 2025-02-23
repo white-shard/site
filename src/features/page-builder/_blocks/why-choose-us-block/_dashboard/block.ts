@@ -18,7 +18,7 @@ export const WhyChooseUsBlockDashboard: Block = {
 			name: "description",
 			label: "💬 Описание",
 			type: "textarea",
-			required: true,
+			required: false,
 			defaultValue:
 				"Мы предлагаем комплексные решения для вашего бизнеса, от разработки до поддержки и развития."
 		},

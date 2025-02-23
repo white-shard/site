@@ -1,6 +1,6 @@
 export type AnswersToQuestionsBlockData = {
 	title: string
-	description: string
+	description?: string
 	questions: QuestionData[]
 }
 

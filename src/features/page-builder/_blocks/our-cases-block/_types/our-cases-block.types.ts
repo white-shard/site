@@ -1,5 +1,5 @@
 export type OurCasesBlock = {
 	title: string
-	description: string
+	description?: string
 	count: number
 }

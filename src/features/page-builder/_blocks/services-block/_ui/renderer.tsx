@@ -39,7 +39,10 @@ export function ServicesBlockRenderer({ data }: Props) {
 			>
 				{data.services.map((service) => (
 					<motion.div key={service.id} variants={item} className="h-full">
-						<Link href={`/${service.link.slug}`} className="block h-full">
+						<Link
+							href={service.link ? `/${service.link.slug}` : "#"}
+							className="block h-full"
+						>
 							<ServiceCard data={service} />
 						</Link>
 					</motion.div>
