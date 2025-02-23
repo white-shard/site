@@ -264,6 +264,11 @@ export interface Page {
             blockName?: string | null;
             blockType: 'offerRequestBlock';
           }
+        | {
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'offerBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -610,6 +615,12 @@ export interface PagesSelect<T extends boolean = true> {
                           placeholder?: T;
                         };
                   };
+              id?: T;
+              blockName?: T;
+            };
+        offerBlock?:
+          | T
+          | {
               id?: T;
               blockName?: T;
             };
