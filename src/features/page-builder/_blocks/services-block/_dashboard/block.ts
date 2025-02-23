@@ -43,13 +43,13 @@ export const ServicesBlockDashboard: Block = {
 					name: "cost",
 					label: "💰 Стоимость",
 					type: "text",
-					required: true
+					required: false
 				},
 				{
 					name: "link",
 					label: "🔗 Ссылка",
 					type: "relationship",
-					required: true,
+					required: false,
 					relationTo: "pages"
 				}
 			],

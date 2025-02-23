@@ -21,7 +21,7 @@ export const HeroBlockRenderer = memo(({ data }: Props) => {
 	)
 
 	return (
-		<section className="flex min-h-[calc(100vh-88px)] w-full flex-col items-center justify-between gap-4 md:h-auto md:flex-row">
+		<section className="flex min-h-[calc(100vh-88px)] w-full flex-col items-center justify-between gap-4 md:h-auto md:min-h-auto md:flex-row">
 			<Content
 				title={data.title}
 				description={data.description}

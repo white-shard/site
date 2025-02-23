@@ -151,8 +151,8 @@ export interface Page {
               | {
                   name: string;
                   description: string;
-                  cost: string;
-                  link: number | Page;
+                  cost?: string | null;
+                  link?: (number | null) | Page;
                   id?: string | null;
                 }[]
               | null;

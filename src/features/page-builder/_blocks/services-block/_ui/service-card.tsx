@@ -30,9 +30,11 @@ export function ServiceCard({ data }: Props) {
 						{data.description}
 					</CardDescription>
 				</CardContent>
-				<CardFooter>
-					<span className="text-lg">от {data.cost} ₽</span>
-				</CardFooter>
+				{data.cost && (
+					<CardFooter>
+						<span className="text-lg">от {data.cost} ₽</span>
+					</CardFooter>
+				)}
 			</Card>
 		</motion.div>
 	)
