@@ -1,4 +1,5 @@
 import { JetBrains_Mono } from "next/font/google"
+import { Suspense } from "react"
 
 import { AppFooter } from "@/features/app-footer"
 import { AppHeader } from "@/features/app-header"
@@ -57,13 +58,17 @@ export default function RootLayout({
 		<html suppressHydrationWarning lang="ru">
 			<body
 				className={cn(
-					"bg-background min-h-screen antialiased",
+					"bg-background min-h-screen overflow-x-hidden antialiased",
 					jetbrainsMono.variable
 				)}
 			>
-				<AppHeader />
+				<Suspense>
+					<AppHeader />
+				</Suspense>
 				{children}
-				<AppFooter />
+				<Suspense>
+					<AppFooter />
+				</Suspense>
 				<Toaster />
 			</body>
 		</html>
