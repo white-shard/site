@@ -269,6 +269,14 @@ export interface Page {
             blockName?: string | null;
             blockType: 'offerBlock';
           }
+        | {
+            title: string;
+            description: string;
+            discount: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'bannerBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -621,6 +629,15 @@ export interface PagesSelect<T extends boolean = true> {
         offerBlock?:
           | T
           | {
+              id?: T;
+              blockName?: T;
+            };
+        bannerBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              discount?: T;
               id?: T;
               blockName?: T;
             };
