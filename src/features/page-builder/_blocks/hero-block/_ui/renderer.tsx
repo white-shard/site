@@ -27,6 +27,7 @@ export const HeroBlockRenderer = memo(({ data }: Props) => {
 				description={data.description}
 				features={data.features}
 				buttonText={data.button}
+				cost={data.cost}
 			/>
 			<div className="order-1 my-4 flex w-full items-center justify-center md:order-2 md:flex-1">
 				<Slider desktopImages={desktopImages} mobileImages={mobileImages} />

@@ -133,6 +133,7 @@ export interface Page {
                 }[]
               | null;
             button: string;
+            cost?: string | null;
             slider?:
               | {
                   desktopImage: number | Media;
@@ -466,6 +467,7 @@ export interface PagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               button?: T;
+              cost?: T;
               slider?:
                 | T
                 | {
