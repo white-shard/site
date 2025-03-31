@@ -278,6 +278,17 @@ export interface Page {
             blockName?: string | null;
             blockType: 'bannerBlock';
           }
+        | {
+            service: string;
+            goals: {
+              title: string;
+              description: string;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'purposefulBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -640,6 +651,20 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               discount?: T;
+              id?: T;
+              blockName?: T;
+            };
+        purposefulBlock?:
+          | T
+          | {
+              service?: T;
+              goals?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
