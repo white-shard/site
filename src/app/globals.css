@@ -1,0 +1,34 @@
+/* Анимации для PurposefulBlock */
+@keyframes pulse-primary {
+	0%,
+	100% {
+		border-color: var(--color-border);
+		color: var(--color-foreground);
+	}
+	50% {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+	}
+}
+
+.pulse-primary-animation {
+	animation-name: pulse-primary;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+.cursor-blink {
+	animation: blink 1s step-end infinite;
+	color: var(--color-primary);
+	font-weight: bold;
+}
