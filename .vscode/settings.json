@@ -12,5 +12,6 @@
 		"**/node_modules": false,
 		"**/yarn.lock": true
 	},
-	"explorerExclude.backup": {}
+	"explorerExclude.backup": {},
+	"hide-files.files": []
 }

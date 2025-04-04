@@ -1,6 +1,6 @@
 export type ServicesBlockData = {
 	title: string
-	description: string
+	description?: string
 	services: ServiceData[]
 }
 

@@ -48,6 +48,12 @@ export const HeroBlockDashboard: Block = {
 			defaultValue: "Подробнее"
 		},
 		{
+			name: "cost",
+			label: "💰 Стоимость",
+			type: "text",
+			required: false
+		},
+		{
 			name: "slider",
 			label: "📷 Слайдер",
 			labels: {

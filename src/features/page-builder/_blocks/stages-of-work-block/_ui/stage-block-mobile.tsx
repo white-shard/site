@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/shared/ui/card"
 type Props = {
 	index: number
 	name: string
-	description: string
+	description?: string
 }
 
 export function StageBlockMobile({ index, name, description }: Props) {
@@ -21,7 +21,9 @@ export function StageBlockMobile({ index, name, description }: Props) {
 				<CardContent className="py-6">
 					<div>
 						<h3 className="mb-2 text-lg font-bold">{name}</h3>
-						<p className="text-muted-foreground text-sm">{description}</p>
+						{description && (
+							<p className="text-muted-foreground text-sm">{description}</p>
+						)}
 					</div>
 				</CardContent>
 				<motion.span

@@ -4,6 +4,7 @@ export type HeroBlockData = {
 	title: string
 	description: string
 	button: string
+	cost: string
 	features: {
 		id: string
 		name: string

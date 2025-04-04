@@ -18,7 +18,7 @@ export const OfferRequestBlockDashboard: Block = {
 			name: "description",
 			label: "💬 Описание",
 			type: "textarea",
-			required: true,
+			required: false,
 			defaultValue:
 				"Хотите получить бесплатную консультацию, заполните короткую форму и мы свяжемся с вами в удобное для вас время!"
 		},

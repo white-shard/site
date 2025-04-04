@@ -21,12 +21,13 @@ export const HeroBlockRenderer = memo(({ data }: Props) => {
 	)
 
 	return (
-		<section className="flex h-[calc(100vh-88px)] w-full flex-col items-center justify-between gap-4 md:h-auto md:flex-row">
+		<section className="flex min-h-[calc(100vh-88px)] w-full flex-col items-center justify-between gap-4 md:h-auto md:min-h-auto md:flex-row">
 			<Content
 				title={data.title}
 				description={data.description}
 				features={data.features}
 				buttonText={data.button}
+				cost={data.cost}
 			/>
 			<div className="order-1 my-4 flex w-full items-center justify-center md:order-2 md:flex-1">
 				<Slider desktopImages={desktopImages} mobileImages={mobileImages} />
