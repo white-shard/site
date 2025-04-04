@@ -1,7 +1,3 @@
-"use cache"
-
-import { cacheLife } from "next/dist/server/use-cache/cache-life"
-
 import { TelegramLink } from "@/features/contact-link"
 
 import { AppLogo } from "@/shared/ui/app-logo"
@@ -15,7 +11,6 @@ export async function AppHeader() {
 	const APP_LOGO = <AppLogo />
 	const CONTACT = <TelegramLink />
 	const ACTIONS = <ApplicationButton />
-	cacheLife("minutes")
 
 	return (
 		<AppHeaderLayout
