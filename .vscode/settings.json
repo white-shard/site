@@ -9,7 +9,7 @@
 		"**/.next": true,
 		"**/.vscode": true,
 		"**/next-env.d.ts": true,
-		"**/node_modules": true,
+		"**/node_modules": false,
 		"**/yarn.lock": true
 	},
 	"explorerExclude.backup": {},
