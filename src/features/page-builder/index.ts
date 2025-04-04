@@ -1,7 +1,10 @@
 import { AnswersToQuestionsBlock } from "./_blocks/answers-to-questions-block"
+import { BannerBlock } from "./_blocks/banner-block"
 import { HeroBlock } from "./_blocks/hero-block"
+import { OfferBlock } from "./_blocks/offer-block"
 import { OfferRequestBlock } from "./_blocks/offer-request-block"
 import { OurCasesBlock, OurCasesController } from "./_blocks/our-cases-block"
+import { PurposefulBlock } from "./_blocks/purposeful-block"
 import { ServicesBlock } from "./_blocks/services-block"
 import { StagesOfWorkBlock } from "./_blocks/stages-of-work-block"
 import { TextBlock } from "./_blocks/text-block"
@@ -19,7 +22,10 @@ export const registeredBlocks: RegisteredBlockData[] = [
 	WhyChooseUsBlock,
 	AnswersToQuestionsBlock,
 	OurCasesBlock,
-	OfferRequestBlock
+	OfferRequestBlock,
+	OfferBlock,
+	BannerBlock,
+	PurposefulBlock
 ]
 export const registeredControllers: RegisteredChildPageController[] = [
 	OurCasesController

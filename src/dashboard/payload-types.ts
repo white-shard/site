@@ -133,6 +133,7 @@ export interface Page {
                 }[]
               | null;
             button: string;
+            cost?: string | null;
             slider?:
               | {
                   desktopImage: number | Media;
@@ -263,6 +264,30 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'offerRequestBlock';
+          }
+        | {
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'offerBlock';
+          }
+        | {
+            title: string;
+            description: string;
+            discount: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'bannerBlock';
+          }
+        | {
+            service: string;
+            goals: {
+              title: string;
+              description: string;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'purposefulBlock';
           }
       )[]
     | null;
@@ -453,6 +478,7 @@ export interface PagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               button?: T;
+              cost?: T;
               slider?:
                 | T
                 | {
@@ -609,6 +635,35 @@ export interface PagesSelect<T extends boolean = true> {
                           label?: T;
                           placeholder?: T;
                         };
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        offerBlock?:
+          | T
+          | {
+              id?: T;
+              blockName?: T;
+            };
+        bannerBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              discount?: T;
+              id?: T;
+              blockName?: T;
+            };
+        purposefulBlock?:
+          | T
+          | {
+              service?: T;
+              goals?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
                   };
               id?: T;
               blockName?: T;
