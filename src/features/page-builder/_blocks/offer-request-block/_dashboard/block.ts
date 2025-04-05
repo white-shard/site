@@ -120,6 +120,27 @@ export const OfferRequestBlockDashboard: Block = {
 					]
 				},
 				{
+					name: "promoCode",
+					label: "🔑 Промокод",
+					type: "group",
+					fields: [
+						{
+							name: "label",
+							label: "🔍 Заголовок",
+							defaultValue: "🔑 Промокод",
+							type: "text",
+							required: true
+						},
+						{
+							name: "placeholder",
+							label: "💬 Подсказка",
+							defaultValue: "Введите ваш промокод",
+							type: "textarea",
+							required: true
+						}
+					]
+				},
+				{
 					name: "typeOfActivity",
 					label: "⚒️ Ваша ниша",
 					type: "group",

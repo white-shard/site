@@ -18,6 +18,7 @@ export const requestFormSchema = z.object({
 			message: "Комментарий должен содержать не больше 1000 символов"
 		})
 		.optional(),
+	promoCode: z.string().optional(),
 	typeOfActivity: z.string().optional(),
 	tasks: z.string().optional(),
 	competitors: z.string().optional(),

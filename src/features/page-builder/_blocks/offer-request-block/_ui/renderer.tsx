@@ -30,7 +30,8 @@ export function OfferRequestBlockRenderer({ data }: Props) {
 		defaultValues: {
 			fullname: "",
 			phone: "",
-			email: ""
+			email: "",
+			promoCode: ""
 		}
 	})
 
@@ -133,6 +134,13 @@ export function OfferRequestBlockRenderer({ data }: Props) {
 									name="comment"
 									render={({ field }) => (
 										<FormTextarea field={field} meta={formMeta.comment} />
+									)}
+								/>
+								<FormField
+									control={form.control}
+									name="promoCode"
+									render={({ field }) => (
+										<FormInput field={field} meta={formMeta.promoCode} />
 									)}
 								/>
 								{!showOfferFields && <FormButtons />}

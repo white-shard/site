@@ -44,6 +44,15 @@ export const RequestCollection: CollectionConfig = {
 			required: false
 		},
 		{
+			name: "promoCode",
+			label: "🔑 Промокод",
+			type: "text",
+			required: false,
+			admin: {
+				position: "sidebar"
+			}
+		},
+		{
 			name: "typeOfActivity",
 			label: "⚒️ Тип деятельности",
 			type: "textarea",
