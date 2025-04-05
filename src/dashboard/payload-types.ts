@@ -232,6 +232,10 @@ export interface Page {
                 label: string;
                 placeholder: string;
               };
+              promoCode: {
+                label: string;
+                placeholder: string;
+              };
               typeOfActivity: {
                 label: string;
                 placeholder: string;
@@ -342,6 +346,7 @@ export interface Request {
   email: string;
   phone: string;
   comment?: string | null;
+  promoCode?: string | null;
   typeOfActivity?: string | null;
   tasks?: string | null;
   competitors?: string | null;
@@ -593,6 +598,12 @@ export interface PagesSelect<T extends boolean = true> {
                           label?: T;
                           placeholder?: T;
                         };
+                    promoCode?:
+                      | T
+                      | {
+                          label?: T;
+                          placeholder?: T;
+                        };
                     typeOfActivity?:
                       | T
                       | {
@@ -699,6 +710,7 @@ export interface RequestSelect<T extends boolean = true> {
   email?: T;
   phone?: T;
   comment?: T;
+  promoCode?: T;
   typeOfActivity?: T;
   tasks?: T;
   competitors?: T;
