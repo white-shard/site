@@ -16,6 +16,7 @@ export type OfferRequestBlockFormMeta = {
 	email: OfferRequestBlockFormMetaField
 	phone: OfferRequestBlockFormMetaField
 	comment: OfferRequestBlockFormMetaField
+	promoCode: OfferRequestBlockFormMetaField
 	typeOfActivity: OfferRequestBlockFormMetaField
 	tasks: OfferRequestBlockFormMetaField
 	competitors: OfferRequestBlockFormMetaField
@@ -36,6 +37,7 @@ export type FieldTypeString = ControllerRenderProps<
 	| "email"
 	| "phone"
 	| "comment"
+	| "promoCode"
 	| "typeOfActivity"
 	| "tasks"
 	| "competitors"
