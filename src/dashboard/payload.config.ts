@@ -12,6 +12,7 @@ import {
 	RequestCollection,
 	UserCollection
 } from "./collections"
+import { EmployeeCollection } from "./collections/employee.collection"
 import { PageCollection } from "./collections/page.collection"
 import { SettingsGlobal } from "./globals"
 import { ruTranslations } from "./translations"
@@ -38,6 +39,7 @@ export default buildConfig({
 		UserCollection,
 		PageCollection,
 		CasesCollection,
+		EmployeeCollection,
 		RequestCollection,
 		MediaCollection
 	],

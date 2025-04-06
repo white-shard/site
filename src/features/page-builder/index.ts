@@ -1,5 +1,6 @@
 import { AnswersToQuestionsBlock } from "./_blocks/answers-to-questions-block"
 import { BannerBlock } from "./_blocks/banner-block"
+import { EmployeeBlock } from "./_blocks/employees-block"
 import { HeroBlock } from "./_blocks/hero-block"
 import { OfferBlock } from "./_blocks/offer-block"
 import { OfferRequestBlock } from "./_blocks/offer-request-block"
@@ -25,7 +26,8 @@ export const registeredBlocks: RegisteredBlockData[] = [
 	OfferRequestBlock,
 	OfferBlock,
 	BannerBlock,
-	PurposefulBlock
+	PurposefulBlock,
+	EmployeeBlock
 ]
 export const registeredControllers: RegisteredChildPageController[] = [
 	OurCasesController

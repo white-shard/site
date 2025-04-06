@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     pages: Page;
     cases: Case;
+    employees: Employee;
     request: Request;
     media: Media;
     'payload-locked-documents': PayloadLockedDocument;
@@ -25,6 +26,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     cases: CasesSelect<false> | CasesSelect<true>;
+    employees: EmployeesSelect<false> | EmployeesSelect<true>;
     request: RequestSelect<false> | RequestSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -293,6 +295,13 @@ export interface Page {
             blockName?: string | null;
             blockType: 'purposefulBlock';
           }
+        | {
+            title: string;
+            description?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'employeeBlock';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -338,6 +347,21 @@ export interface Case {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "employees".
+ */
+export interface Employee {
+  id: number;
+  role: string;
+  name: string;
+  description: string;
+  experience: string;
+  rank: string;
+  picture?: (number | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "request".
  */
 export interface Request {
@@ -376,6 +400,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'cases';
         value: number | Case;
+      } | null)
+    | ({
+        relationTo: 'employees';
+        value: number | Employee;
       } | null)
     | ({
         relationTo: 'request';
@@ -679,6 +707,14 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        employeeBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   updatedAt?: T;
   createdAt?: T;
@@ -698,6 +734,20 @@ export interface CasesSelect<T extends boolean = true> {
         picture?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "employees_select".
+ */
+export interface EmployeesSelect<T extends boolean = true> {
+  role?: T;
+  name?: T;
+  description?: T;
+  experience?: T;
+  rank?: T;
+  picture?: T;
   updatedAt?: T;
   createdAt?: T;
 }
