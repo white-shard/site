@@ -33,8 +33,8 @@ export const PurposefulBlockDashboard: Block = {
 				{
 					name: "description",
 					label: "💬 Описание",
-					type: "richText",
-					required: true
+					type: "textarea",
+					required: false
 				}
 			]
 		}
