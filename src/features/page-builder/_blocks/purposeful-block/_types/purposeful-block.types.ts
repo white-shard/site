@@ -5,5 +5,10 @@ export type PurposefulBlockData = {
 
 export type Goal = {
 	title: string
-	description: string
+	description: never | null | undefined
+}
+
+export type AnimationParam = {
+	scale: number
+	duration: number
 }

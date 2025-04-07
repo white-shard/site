@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react"
 
 import { Button } from "@/shared/ui/button"
 
-import { AnimationParam, Goal } from "./types"
+import { AnimationParam, Goal } from "../_types/purposeful-block.types"
 
 type GoalButtonProps = {
 	goal: Goal
@@ -76,7 +76,7 @@ export function GoalButton({
 				ref={buttonRef}
 				className="h-auto w-full min-w-[120px] flex-col p-2 text-left text-sm transition-colors sm:min-w-[160px] sm:p-3 sm:text-base"
 				variant="outline"
-				title={goal.description}
+				title={goal.title}
 				onClick={() => onClick(goal)}
 				style={{
 					borderColor: "inherit",
