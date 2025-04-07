@@ -1,12 +1,13 @@
+import { RichText } from "@payloadcms/richtext-lexical/react"
+
 import {
 	Dialog,
 	DialogContent,
-	DialogDescription,
 	DialogHeader,
 	DialogTitle
 } from "@/shared/ui/dialog"
 
-import { Goal } from "./types"
+import { Goal } from "../_types/purposeful-block.types"
 
 type GoalDialogProps = {
 	selectedGoal: Goal | null
@@ -20,9 +21,10 @@ export function GoalDialog({ selectedGoal, onOpenChange }: GoalDialogProps) {
 				<DialogHeader>
 					<DialogTitle className="text-xl">{selectedGoal?.title}</DialogTitle>
 				</DialogHeader>
-				<DialogDescription className="text-base">
-					{selectedGoal?.description}
-				</DialogDescription>
+				<RichText
+					className="richText"
+					data={selectedGoal?.description as never}
+				/>
 			</DialogContent>
 		</Dialog>
 	)
