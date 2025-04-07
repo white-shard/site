@@ -1,12 +1,19 @@
 import { MetadataRoute } from "next"
 
-import { NavigationLink } from "@/features/app-footer/_types/navigation.type"
+import { Page } from "@/dashboard/payload-types"
 
-import { getNavigationData } from "@/shared/api/settings.api"
+import { getAppCMS } from "@/shared/lib/payload"
 
 const lastReload = new Date()
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const navigation = (await getNavigationData()) ?? []
+	const pages = await getAppCMS().then((res) =>
+		res
+			.find({
+				collection: "pages"
+			})
+			.then((res) => res.docs)
+			.catch(() => [] as Page[])
+	)
 
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://white-shard.ru"
 
@@ -21,11 +28,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	]
 
 	// Страницы блога
-	const dynamicPages = navigation.map((page: NavigationLink) => ({
-		url: `${baseUrl}${page.href}`,
-		lastModified: lastReload,
+	const dynamicPages = pages.map((page: Page) => ({
+		url: `${baseUrl}/${page.slug}`,
+		lastModified: page.updatedAt,
 		changeFrequency: "daily" as const,
-		priority: 0.8
+		priority: 0.9
 	}))
 
 	return [...staticPages, ...dynamicPages]
