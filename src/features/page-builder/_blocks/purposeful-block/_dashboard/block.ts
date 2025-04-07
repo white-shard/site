@@ -26,14 +26,14 @@ export const PurposefulBlockDashboard: Block = {
 			fields: [
 				{
 					name: "title",
-					label: "🔍 Заголовок",
+					label: "🔍 Название",
 					type: "text",
 					required: true
 				},
 				{
 					name: "description",
 					label: "💬 Описание",
-					type: "textarea",
+					type: "richText",
 					required: false
 				}
 			]
